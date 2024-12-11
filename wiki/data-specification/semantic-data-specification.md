@@ -1,0 +1,23 @@
+# Semantic Data Specification
+
+## Definition
+
+A _**semantic data specification**_ , often called simply _**data specification**_, is a union of machine- and human-readable artefacts addressing clearly defined concerns, interoperability scope and use-cases. A semantic data specification comprises at least an ontology and a data shape (or either of them individually) accompanied by a human-readable data specification.
+
+## Description
+
+One general categorisation of semantic data specifications is along the reuse axis.
+
+Some semantic data specifications are built with the intent that the terms of the conceptual model can be used in as much as possible contexts. Typically, it is possible to use the terms independently of each other. In this case, the definitions of the terms are usually very broad and abstract, and only the bare minimum of (usage) constraints are expressed. Often, the terms are presented as a list to the reader, with identifiers for each term in the same namespace. Those semantic data specifications are usually denoted with terms such as vocabularies or terminology.
+
+On the other side of the spectrum are the data specifications that precisely encode the semantics of the conceptual model that is being used in a single data exchange context, implemented in software or API. They usually have a strong connection with technical data representations (see section on \[[Technical artefacts and concerns](https://semiceu.github.io/style-guide/1.0.0/arhitectural-clarifications.html#sec:technical-concerns-and-artefacts)]) and documentations such as XSD schema, OpenAPI specifications, etc. Conceptual models for this purpose will contain precise constraints, technical datatypes, the code-lists that are being used, refer to implementation decisions, etc. Semantic data specifications that are created for that purpose are denoted with Implementation Models. As that name indicate, their objective is to encode the conceptual model of an implementation.
+
+Between those two extremes, i.e. contextfree reuse (vocabularies) and unique usage context (Implementation Models), there are semantic data specifications that aim to capture the conceptual model for a broad, yet well-defined, usage context. Typically, these data specifications do not intend to introduce new terms in the conceptual model, but will exploit terms from other semantic data specifications. These exploited terms are augmented with additional usage constraints making the terms more fit for purpose. These semantic data specifications are often denoted with terms such as Application Profiles or Profiles.
+
+Readers should understand that the usage relationships between semantic data specifications form a complex network. An attempt to provide a structured view on this network was initiated in the draft W3C Profile Guide \[[profile-guide](https://semiceu.github.io/style-guide/1.0.0/references.html#ref:profile-guide)]. Also, the Application Profiles do not necessarily have to address all the technical needs related to an implemented system. Distinction between technical and semantic interoperability layers is attempted in [this section](https://semiceu.github.io/style-guide/1.0.0/arhitectural-clarifications.html#sec:technical-concerns-and-artefacts).
+
+This categorisation along the reuse axis indicates the importance of expressing the interoperability scope for semantic data specifications. However, due to the absence of widely accepted definitions for those categories, outlining the exact _**Do**_&#x73; and _**Don’t**_&#x73; (for each category), may result to different expectations for each category. This style guide is a document that defines the commonly accepted and applied rules for SEMIC.
+
+In the SEMIC context, two types of semantic data specifications are considered: \[[Core Vocabulary](https://semiceu.github.io/style-guide/1.0.0/terminological-clarifications.html#sec:what-is-a-cv-specification)] and \[[Application Profile](https://semiceu.github.io/style-guide/1.0.0/terminological-clarifications.html#sec:what-is-an-ap-specification)]. Semantic data specifications of the third category, Implementation Models, are not part of the activities of SEMIC. Nevertheless, their existence, is taken into account when building the Core Vocabularies and Application Profiles.
+
+Occasionally, this document will refer to semantic data specifications shortly as "data specifications". With a similar meaning, the term "semantic asset" is used in the literature (e.g. ADMS \[[adms](https://semiceu.github.io/style-guide/1.0.0/references.html#ref:adms)]). However, in our understanding, the term "semantic asset" is broader than "data specification" and includes controlled vocabularies and possibly other types of assets.
